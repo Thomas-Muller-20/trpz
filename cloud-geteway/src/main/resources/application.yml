@@ -1,0 +1,26 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      routes:
+        - id: TRANSACTIONAL-SERVICE
+          uri: lb://TRANSACTIONAL-SERVICE
+          predicates:
+            - Path=/processing/**
+        - id: LOAN-SERVICE
+          uri: lb://LOAN-SERVICE
+          predicates:
+            - Path=/loans/**
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+  instance:
+    hostname: localhost

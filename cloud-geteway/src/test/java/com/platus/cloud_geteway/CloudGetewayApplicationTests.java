@@ -1,0 +1,13 @@
+package com.platus.cloud_geteway;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+
+@SpringBootTest
+class CloudGetewayApplicationTests {
+
+	@Test
+	void contextLoads() {
+	}
+
+}
